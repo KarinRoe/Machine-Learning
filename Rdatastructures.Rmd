@@ -1,0 +1,54 @@
+---
+title: "Machine Learing"
+author: "Karin"
+date: "3 Mai 2018"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## R data structures
+The most typical structures used in machine learning are **vectors**, **factors**, **lists**, **arrays**, and **data frames**.
+
+### Vector
+Vectors stores an ordered set of values called elements. A vector can contain any number of element however they need to be the same type. So a vector type cannot be nummerical and categorical at the same time.
+
+There are several vector types commonly used: *integer* (numbers without decimals), *numeric* (numbers with decimals), *character* (text), or *logical* (TRUE or FALSE values). There are also two special values: *NULL*, which is used to indicate the absence of any value, and *NA*, which indicates a missing value.
+
+### Factors
+A factor is a special case of vector that is solely used for representing nominal variables or categorical variable. Change character vector so you can use it for algorithms and also can save memory. In R you apply **factor()** function. 
+```{r }
+gender <- factor(c("MALE", "FEMALE", "MALE"))
+gender
+```
+Also levels can give additional order about data and additional information. 
+```{r}
+blood <- factor(c("O", "AB", "A"),
+levels = c("A", "B", "AB", "O"))
+blood
+```
+### Lists
+Another type of vector is used for storing an ordered set of values. A list allows
+different types of values to be collected. Due to this ???exibility, lists are often used to
+store various types of input and output data, and sets of configuration parameters for
+machine learning models. In R you apply **list()** function.
+
+### Data frames
+Rectangular data. The structure is the same as in spreadsheet or database since it has both rows and columns of data. In R terms, a data frame can be understood as a list of vectors or
+factors, each having exactly the same number of values. Because the data frame is
+literally a list of vectors, it combines aspects of both vectors and lists.
+
+### Matrixes and arrays
+Is a data structure that represents a two-dimensional table, with rows and
+columns of data. R matrixes can contain any single type of data, although they are most
+often used for mathematical operations and therefore typically store only numeric data.
+In R you apply **matrix()** function.
+```{r}
+m <- matrix(c('a', 'b', 'c', 'd'), nrow = 2)
+m
+```
+Closely related to the matrix structure is the array, which is a multi-dimensional table
+of data. Where a matrix has rows and columns of values, an array has rows, columns,
+and any number of additional layers of values.
